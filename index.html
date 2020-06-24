@@ -1,0 +1,736 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>plan</title><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+/* meyer reset -- http://meyerweb.com/eric/tools/css/reset/ , v2.0 | 20110126 | License: none (public domain) */
+
+@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+:root {
+	--active-file-bg-color: #dadada;
+	--active-file-bg-color: rgba(32, 43, 51, 0.63);
+	--active-file-text-color: white;
+	--bg-color: #f3f2ee;
+	--text-color: #1f0909;
+	--control-text-color: #444;
+	--rawblock-edit-panel-bd: #e5e5e5;
+
+	--select-text-bg-color: rgba(32, 43, 51, 0.63);
+  --select-text-font-color: white;
+}
+
+pre {
+	--select-text-bg-color: #36284e;
+	--select-text-font-color: #fff;
+}
+
+html {
+	font-size: 16px;
+}
+
+html, body {
+	background-color: #f3f2ee;
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+	color: #1f0909;
+	line-height: 1.5em;
+}
+
+/*#write {
+	overflow-x: auto;
+    max-width: initial;
+	padding-left: calc(50% - 17em);
+    padding-right: calc(50% - 17em);
+}
+
+@media (max-width: 36em) {
+ 	#write {
+ 		padding-left: 1em;
+    	padding-right: 1em;
+ 	}
+}*/
+
+#write {
+	max-width: 40em;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+			max-width: 914px;
+	}
+}
+
+ol li {
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+ul li {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* styles */
+
+/* ====== */
+
+/* headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+}
+h1 {
+	font-size: 1.875em;
+	/*30 / 16*/
+	line-height: 1.6em;
+	/* 48 / 30*/
+	margin-top: 2em;
+}
+h2,
+h3 {
+	font-size: 1.3125em;
+	/*21 / 16*/
+	line-height: 1.15;
+	/*24 / 21*/
+	margin-top: 2.285714em;
+	/*48 / 21*/
+	margin-bottom: 1.15em;
+	/*24 / 21*/
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-size: 1.125em;
+	/*18 / 16*/
+	margin-top: 2.67em;
+	/*48 / 18*/
+}
+h5,
+h6 {
+	font-size: 1em;
+	/*16*/
+}
+h1 {
+	border-bottom: 1px solid;
+	margin-bottom: 1.875em;
+	padding-bottom: 0.8125em;
+}
+/* links */
+
+a {
+	text-decoration: none;
+	color: #065588;
+}
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+/* block spacing */
+
+p,
+blockquote,
+.md-fences {
+	margin-bottom: 1.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 1.5em;
+}
+/* blockquote */
+
+blockquote {
+	font-style: italic;
+	border-left: 5px solid;
+	margin-left: 2em;
+	padding-left: 1em;
+}
+/* lists */
+
+ul,
+ol {
+	margin: 0 0 1.5em 1.5em;
+}
+/* tables */
+.md-meta,.md-before, .md-after {
+	color:#999;
+}
+
+table {
+	margin-bottom: 1.5em;
+	/*24 / 16*/
+	font-size: 1em;
+	/* width: 100%; */
+}
+thead th,
+tfoot th {
+	padding: .25em .25em .25em .4em;
+	text-transform: uppercase;
+}
+th {
+	text-align: left;
+}
+td {
+	vertical-align: top;
+	padding: .25em .25em .25em .4em;
+}
+
+code,
+.md-fences {
+	background-color: #dadada;
+}
+
+code {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.md-fences {
+	margin-left: 2em;
+	margin-bottom: 3em;
+	padding-left: 1ch;
+	padding-right: 1ch;
+}
+
+pre,
+code,
+tt {
+	font-size: .875em;
+	line-height: 1.714285em;
+}
+/* some fixes */
+
+h1 {
+	line-height: 1.3em;
+	font-weight: normal;
+	margin-bottom: 0.5em;
+}
+
+p + ul,
+p + ol{
+	margin-top: .5em;
+}
+
+h3 + ul,
+h4 + ul,
+h5 + ul,
+h6 + ul,
+h3 + ol,
+h4 + ol,
+h5 + ol,
+h6 + ol {
+	margin-top: .5em;
+}
+
+li > ul,
+li > ol {
+	margin-top: inherit;
+	margin-bottom: 0;
+}
+
+li ol>li {
+	list-style-type: lower-alpha;
+}
+
+li li ol>li{
+	list-style-type: lower-roman;
+}
+
+h2,
+h3 {
+	margin-bottom: .75em;
+}
+hr {
+	border-top: none;
+	border-right: none;
+	border-bottom: 1px solid;
+	border-left: none;
+}
+h1 {
+	border-color: #c5c5c5;
+}
+blockquote {
+	border-color: #bababa;
+	color: #656565;
+}
+
+blockquote ul,
+blockquote ol {
+	margin-left:0;
+}
+
+.ty-table-edit {
+	background-color: transparent;
+}
+thead {
+	background-color: #dadada;
+}
+tr:nth-child(even) {
+	background: #e8e7e7;
+}
+hr {
+	border-color: #c5c5c5;
+}
+.task-list{
+	padding-left: 1rem;
+}
+
+.md-task-list-item {
+	padding-left: 1.5rem;
+	list-style-type: none;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.25rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #F3F2EE;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+
+#write pre.md-meta-block {
+	min-height: 1.875rem;
+	color: #555;
+	border: 0px;
+	background: transparent;
+	margin-top: -4px;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+.md-image>.md-meta {
+	color: #9B5146;
+}
+
+.md-image>.md-meta{
+	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', serif;
+}
+
+
+#write>h3.md-focus:before{
+	left: -1.5rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h4.md-focus:before{
+	left: -1.5rem;
+	top: .25rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h5.md-focus:before{
+	left: -1.5rem;
+	top: .0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h6.md-focus:before{
+	left: -1.5rem;
+	top: 0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+.md-toc-content:empty:before{
+	color: #065588;
+}
+.md-toc-item {
+	color: #065588;
+}
+#write div.md-toc-tooltip {
+	background-color: #f3f2ee;
+}
+
+#typora-sidebar {
+	background-color: #f3f2ee;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+}
+
+.pin-outline #typora-sidebar {
+	background: inherit;
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+.pin-outline #typora-sidebar:hover .outline-title-wrapper {
+	border-left:1px dashed;
+}
+
+.outline-item:hover {
+  background-color: #dadada;
+  border-left: 28px solid #dadada;
+  border-right: 18px solid #dadada;
+}
+
+.typora-node .outline-item:hover {
+  	border-right: 28px solid #dadada;
+}
+
+.outline-expander:before {
+  content: "\f0da";
+  font-family: FontAwesome;
+  font-size:14px;
+  top: 1px;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  content: "\f0d7";
+}
+
+.modal-content {
+	background-color: #f3f2ee;
+}
+
+.auto-suggest-container ul li {
+	list-style-type: none;
+}
+
+/** UI for electron */
+
+.megamenu-menu,
+#top-titlebar, #top-titlebar *,
+.megamenu-content {
+	background: #f3f2ee;
+	color: #1f0909;
+}
+
+.megamenu-menu-header {
+	border-bottom: 1px dashed #202B33;
+}
+
+.megamenu-menu {
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+header, .context-menu, .megamenu-content, footer {
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+    color: #1f0909;
+}
+
+#megamenu-back-btn {
+	color: #1f0909;
+	border-color: #1f0909;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title:before {
+	color: #1f0909;
+}
+
+.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
+	color: inherit;
+	background-color: #e8e7df;
+}
+
+.long-btn:hover {
+	background-color: #e8e7df;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+	background-color: #D2D1D1;
+}
+
+.btn-default {
+	background-color: transparent;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+.ty-show-word-count #footer-word-count {
+	background: #c7c5c5;
+}
+
+#typora-quick-open {
+    background-color: inherit;
+}
+
+.md-diagram-panel {
+	margin-top: 8px;
+}
+
+.file-list-item-file-name {
+	font-weight: initial;
+}
+
+.file-list-item-summary {
+	opacity: 1;
+}
+
+.file-list-item {
+	color: #777;
+}
+
+.file-list-item.active {
+	background-color: inherit;
+	color: black;
+}
+
+.ty-side-sort-btn.active {
+	background-color: inherit;
+}
+
+.file-list-item.active .file-list-item-file-name  {
+	font-weight: bold;
+}
+
+.file-list-item{
+    opacity:1 !important;
+}
+
+.file-library-node.active>.file-node-background{
+	background-color: rgba(32, 43, 51, 0.63);
+	background-color: var(--active-file-bg-color);
+}
+
+.file-tree-node.active>.file-node-content{
+	color: white;
+	color: var(--active-file-text-color);
+}
+
+.md-task-list-item>input {
+	margin-left: -1.7em;
+	margin-top: calc(1rem - 12px);
+}
+
+input {
+	border: 1px solid #aaa;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header:hover, 
+.megamenu-menu-header:focus {
+	color: inherit;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+/* https://github.com/typora/typora-issues/issues/2046 */
+.os-windows-7 strong,
+.os-windows-7 strong  {
+	font-weight: 760;
+}
+
+.ty-preferences .btn-default {
+	background: transparent;
+}
+
+.ty-preferences .window-header {
+	border-bottom: 1px dashed #202B33;
+	box-shadow: none;
+}
+
+#sidebar-loading-template, #sidebar-loading-template.file-list-item {
+	color: #777;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h1><a name="drone-project" class="md-header-anchor"></a><span>Drone Project</span></h1><h2><a name="references" class="md-header-anchor"></a><span>references</span></h2><p><span>参考になりそうな資料</span></p><ul><li><p><span>マルチコプタ公開資料</span></p><p><a href='http://indoor-flight.com/contents/29/download' target='_blank' class='url'>http://indoor-flight.com/contents/29/download</a></p></li><li><p><span>ジャイロ＋加速度センサー 基板製作キット C 言語倒立制御プログラム 解説マニュアル</span></p><p><a href='https://www2.himdx.net/mcr/product/download/2gyro_3acc_module_c_language_headstand_control_program_explanation_manual.pdf' target='_blank' class='url'>https://www2.himdx.net/mcr/product/download/2gyro_3acc_module_c_language_headstand_control_program_explanation_manual.pdf</a></p></li><li><p><span>Open source IMU and AHRS algorithms</span></p><p><a href='https://x-io.co.uk/open-source-imu-and-ahrs-algorithms/' target='_blank' class='url'>https://x-io.co.uk/open-source-imu-and-ahrs-algorithms/</a></p></li><li><p><span>【完全自作】ARDUINOを使用した自作ドローンの製作記（飛んだ！）</span></p><p><a href='http://akiracing.com/2017/12/17/arduino_drone/' target='_blank' class='url'>http://akiracing.com/2017/12/17/arduino_drone/</a></p></li><li><p><span>Arduinoでドローンの自作</span></p><p><a href='https://garchiving.com/diary-of-drone/' target='_blank' class='url'>https://garchiving.com/diary-of-drone/</a></p></li><li><p><span>クアッドコプター（Quadcopter）製作</span></p><p><a href='https://plaza.rakuten.co.jp/cpu4edu/31002/' target='_blank' class='url'>https://plaza.rakuten.co.jp/cpu4edu/31002/</a></p></li><li><p><span>新入社員が制作実習でドローンの自作に挑戦した話</span></p><p><a href='https://lab.fujiele.co.jp/articles/3738/' target='_blank' class='url'>https://lab.fujiele.co.jp/articles/3738/</a></p></li><li><p><span>【Arduinoドローン自作】NO.5 ソフトウェア製作編</span></p><p><a href='https://shizenkarasuzon.hatenablog.com/entry/2018/11/23/181215' target='_blank' class='url'>https://shizenkarasuzon.hatenablog.com/entry/2018/11/23/181215</a></p></li></ul><h2><a name="目標" class="md-header-anchor"></a><span>目標</span></h2><p><span>必要最低限の構成でドローンを製作して、まずは飛ばす。</span></p><h2><a name="構成" class="md-header-anchor"></a><span>構成</span></h2><p><span>ここでドローンのシミュレーションができる。これでシミュレーションをしながら部品を選定していくことにする。</span></p><p><a href='https://www.ecalc.ch/xcoptercalc.php' target='_blank' class='url'>https://www.ecalc.ch/xcoptercalc.php</a></p><h3><a name="フライトコントローラ" class="md-header-anchor"></a><span>フライトコントローラ</span></h3><p><span>姿勢制御を行う。</span></p><p><span>ドローンを空中に制止させるには姿勢を制御する仕組みが必要。センサーで計測したデータから現在の機体の姿勢を予想し、姿勢を水平に近付けるようにプロペラへ信号を送る。PID制御という方法が使えるらしい（制御工学という分野の話っぽい）。</span></p><p><span>姿勢制御 - モータの出力を調整して機体を水平に保つ。</span></p><p><span>　機体の姿勢の計測 - 9軸センサーを使う</span></p><p><span>　モータ制御 - PWM</span></p><p><span>	</span></p><p><span>Arduinoを使おう。</span></p><p><span>資料が多いし、最近大学でやってるCがベースだし、ちょうどいいかなと。</span></p><p><a href='http://www.musashinodenpa.com/arduino/ref/' target='_blank' class='url'>http://www.musashinodenpa.com/arduino/ref/</a></p><p><a href='https://pspunch.com/pd/article/arduino_is_c.html' target='_blank' class='url'>https://pspunch.com/pd/article/arduino_is_c.html</a></p><p>&nbsp;</p><p>&nbsp;</p><h2><a name="arduino--電子工作に最低限必要なもの" class="md-header-anchor"></a><span>Arduino + 電子工作に最低限必要なもの</span></h2><p><span>電子部品は秋葉で集めればいいんだけど、北見に戻ったらネットで買うしかないから抵抗とかコンデンサとかよく使う部品はセットで売ってたら一式買っといた方がいいかも。</span></p><h4><a name="arduino-uno" class="md-header-anchor"></a><span>Arduino UNO</span></h4><p><span>全部オープンソースで、回路図も公開されてる。</span><a href='https://www.arduino.cc/' target='_blank' class='url'>https://www.arduino.cc/</a></p><p><span>本家は3000円くらいするけど、安い互換製品が沢山あるので今回はそれを使おう。</span></p><p><span>↓ 安くていい感じだった。USBケーブルもついてる。</span></p><p><a href='https://www.amazon.co.jp/ELEGOO-ATmega328P-ATMEGA16U2-USB%E3%82%B1%E3%83%BC%E3%83%96%E3%83%AB-Arduino%E7%94%A8/dp/B06Y5TBNQX/ref=pd_cart_rp_m_604_2_3/358-7085661-0754258?_encoding=UTF8&amp;pd_rd_i=B06Y5TBNQX&amp;pd_rd_r=6152cdd7-9b73-451a-a28f-33931a61bf2b&amp;pd_rd_w=vkiDe&amp;pd_rd_wg=VdIlZ&amp;pf_rd_p=50de250b-22e1-430e-a75a-8ecce3fcf3ff&amp;pf_rd_r=RC1NE3CP37H72D8M4DNJ&amp;psc=1&amp;refRID=RC1NE3CP37H72D8M4DNJ'><span>ELEGOO UNO</span></a></p><h4><a name="arduino-nano" class="md-header-anchor"></a><span>Arduino NANO</span></h4><p><span>小さい簡易版のやつ。</span></p><p><a href='https://www.amazon.co.jp/KKHMF-ATmega328P-CH340G-%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89-%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%ABArduino%E3%81%A8%E4%BA%92%E6%8F%9B/dp/B073CHKMB2/ref=pd_cart_rp_m_604_2_2/358-7085661-0754258?_encoding=UTF8&amp;pd_rd_i=B073CHKMB2&amp;pd_rd_r=6152cdd7-9b73-451a-a28f-33931a61bf2b&amp;pd_rd_w=vkiDe&amp;pd_rd_wg=VdIlZ&amp;pf_rd_p=50de250b-22e1-430e-a75a-8ecce3fcf3ff&amp;pf_rd_r=RC1NE3CP37H72D8M4DNJ&amp;psc=1&amp;refRID=RC1NE3CP37H72D8M4DNJ'><span>KKHMF Mini USB Nano</span></a></p><h4><a name="ブレッドボード" class="md-header-anchor"></a><span>ブレッドボード</span></h4><p><span>あんまり小さすぎないやつの方がいいと思う。何個かあった方がいいかも。</span></p><h4><a name="ジャンパ線" class="md-header-anchor"></a><span>ジャンパ線</span></h4><p><a href='https://www.amazon.co.jp/dp/B06Y48V9DL/ref=sspa_dk_detail_2?psc=1&amp;pd_rd_i=B06Y48V9DL&amp;pd_rd_w=xnn98&amp;pf_rd_p=6413bd85-d494-49e7-9f81-0e63e79171a9&amp;pd_rd_wg=Twehz&amp;pf_rd_r=E9BA49MT4WSZ25GTP2SK&amp;pd_rd_r=e43aaeb2-a8dc-47ef-8b5d-6fa1bbed33a1&amp;spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzSjVVMlBCM0I2RkxQJmVuY3J5cHRlZElkPUEwMzUzMTM1MlNXVEExRllFRFZRNCZlbmNyeXB0ZWRBZElkPUEzRTQ0RkRNNEIwVzRVJndpZGdldE5hbWU9c3BfZGV0YWlsJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ=='><span>柔らかいタイプ</span></a><span>と</span><a href='https://www.amazon.co.jp/INCREWAY-560%E5%80%8B-%E4%BA%88%E5%82%99%E6%88%90%E5%BD%A2%E3%83%96%E3%83%AC%E3%83%83%E3%83%89%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%91%E3%83%AF%E3%82%A4%E3%83%A4%E3%82%AD%E3%83%83%E3%83%88-14%E9%95%B7%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%91%E3%83%BC%E7%B7%9A%E3%81%AE%E7%9B%9B%E3%82%8A%E5%90%88%E3%82%8F%E3%81%9B-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%E4%BB%98%E3%81%8D/dp/B07T48DGD6/ref=sr_1_29?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&amp;dchild=1&amp;keywords=%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%91%E7%B7%9A&amp;qid=1593012352&amp;s=industrial&amp;sr=1-29'><span>硬いタイプ</span></a><span>があった方が便利。</span></p><h4><a name="はんだごて" class="md-header-anchor"></a><span>はんだごて</span></h4><p><span>白光か太陽電機産業のものだと間違いないと思う。スイッチで急加熱できるタイプが便利。</span></p><p><a href='https://www.amazon.co.jp/%E7%99%BD%E5%85%89-%E5%8D%8A%E7%94%B0%E3%82%B4%E3%83%86-%E3%83%97%E3%83%AC%E3%82%B9%E3%83%88-%E3%82%AD%E3%83%A3%E3%83%83%E3%83%97%E4%BB%98-No-984-01/dp/B000AQSCQS/ref=sr_1_6?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&amp;crid=2KK89T7SHCUNQ&amp;dchild=1&amp;keywords=%E3%83%8F%E3%83%83%E3%82%B3%E3%83%BC+%E5%8D%8A%E7%94%B0%E3%81%94%E3%81%A6&amp;qid=1593012139&amp;sprefix=%E3%83%8F%E3%83%83%E3%82%B3%E3%83%BC%E3%80%80%2Caps%2C254&amp;sr=8-6'><span>白光 No.984-01</span></a></p><p><span>こて先もいろいろある。</span></p><p><a href='https://godhanda.co.jp/blog/kisokouza10/' target='_blank' class='url'>https://godhanda.co.jp/blog/kisokouza10/</a></p><h4><a name="はんだ" class="md-header-anchor"></a><span>はんだ</span></h4><p><span>お金がなければ百均。</span></p><p><a href='https://godhanda.co.jp/blog/kisokouza03/' target='_blank' class='url'>https://godhanda.co.jp/blog/kisokouza03/</a></p><h4><a name="スズメッキ線" class="md-header-anchor"></a><span>スズメッキ線</span></h4><p><a href='https://www.amazon.co.jp/gp/product/B00FIXM89U/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&amp;psc=1'><span>スズメッキ線</span></a></p><h4><a name="こて台" class="md-header-anchor"></a><span>こて台</span></h4><p><span>お金がなければ小手先を綺麗にするのはティッシュを水で浸したやつでいける...</span></p><p><span>買うならこういう水のいらないタイプが便利と思う。</span></p><p><a href='https://www.amazon.co.jp/%E7%99%BD%E5%85%89-HAKKO-633-01-%E3%81%93%E3%81%A6%E5%8F%B0/dp/B000TGNWCS/ref=asc_df_B000TGNWCS/?tag=jpgo-22&amp;linkCode=df0&amp;hvadid=218131442862&amp;hvpos=&amp;hvnetw=g&amp;hvrand=17608955994375615398&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=1009562&amp;hvtargid=pla-439503384707&amp;psc=1&amp;th=1&amp;psc=1'><span>白光 こて台 633-01</span></a></p><p>&nbsp;</p><p>&nbsp;</p><h4><a name="抵抗" class="md-header-anchor"></a><span>抵抗</span></h4><p><span>必要分だけその都度買ってもいいけど、値を間違えたとか買い忘れがあったというのが面倒なのでまとめ買いしてる方がいいかな。</span></p><p><a href='https://www.amazon.co.jp/gp/product/B078HKZSKG/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&amp;psc=1' target='_blank' class='url'>https://www.amazon.co.jp/gp/product/B078HKZSKG/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&psc=1</a></p><h4><a name="コンデンサ" class="md-header-anchor"></a><span>コンデンサ</span></h4><p><span>抵抗に同じ。セラミックコンデンサ（小容量・極性なし）と電解コンデンサ（大容量・極性あり）が主。</span></p><p><a href='https://www.amazon.co.jp/gp/product/B017IGO51S/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&amp;psc=1' target='_blank' class='url'>https://www.amazon.co.jp/gp/product/B017IGO51S/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&psc=1</a></p><h4><a name="スイッチ" class="md-header-anchor"></a><span>スイッチ</span></h4><p><span>何個かある方がいい。</span></p><p><a href='http://akizukidenshi.com/catalog/g/gP-03647/' target='_blank' class='url'>http://akizukidenshi.com/catalog/g/gP-03647/</a></p><h4><a name="led" class="md-header-anchor"></a><span>LED</span></h4><p><span>好きなやつを買えばいい。光らせるのに保護抵抗が必要になる点に注意。</span></p><h4><a name="lcd" class="md-header-anchor"></a><span>LCD</span></h4><p><span>簡単な液晶。</span></p><p><a href='https://www.amazon.co.jp/KKHMF-1602-%E3%83%87%E3%82%A3%E3%82%B9%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB-16%C3%972%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF-LCD%E3%83%96%E3%83%AB%E3%83%BC%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%88/dp/B0757C4W92/ref=pd_bxgy_img_2/358-7085661-0754258?_encoding=UTF8&amp;pd_rd_i=B0757C4W92&amp;pd_rd_r=b44e5ed6-a571-40f2-8245-58e5ed4fb173&amp;pd_rd_w=PeOcp&amp;pd_rd_wg=wYgSK&amp;pf_rd_p=f9b7301a-70fe-4140-bc13-8df64a58b673&amp;pf_rd_r=ZZTK3ZJ5XYJF8WG8G510&amp;psc=1&amp;refRID=ZZTK3ZJ5XYJF8WG8G510'><span>LCD</span></a></p><p><span>LCDを直接Arduinoに繋ぐとなると10本くらい線が必要だけど、アダプタを使ってI2Cという方式で通信すると2本で済む。</span></p><p><a href='https://www.amazon.co.jp/gp/product/B010Q000V2/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&amp;psc=1 '><span>アダプタ</span></a></p><p>&nbsp;</p><h4><a name="acアダプタ" class="md-header-anchor"></a><span>ACアダプタ</span></h4><p><span>ArduinoはPCから電源を取れるのでなくてもいい。でも、モータなんかを回そうと思うとあった方がいいと思う。</span></p><p>&nbsp;</p><p>&nbsp;</p><h4><a name="サーボ" class="md-header-anchor"></a><span>サーボ</span></h4><p><span>ドローンに使えるかはしらない。けど、PWMの勉強には使えると思う。</span></p><p><a href='http://akizukidenshi.com/catalog/goods/search.aspx?search=x&amp;keyword=%83T%81%5B%83%7B&amp;image=%8C%9F%8D%F5' target='_blank' class='url'>http://akizukidenshi.com/catalog/goods/search.aspx?search=x&keyword=%83T%81%5B%83%7B&image=%8C%9F%8D%F5</a></p><h4><a name="モータ" class="md-header-anchor"></a><span>モータ</span></h4><p><span>これだと2セット買わないといけないかな。</span></p><p><a href='https://www.amazon.co.jp/uxcell-DCコアレスモーター-2ブレードプロペラ-RCクワッドローター-DC-3-7V-40000RPM-2個入り/dp/B00R1LYVM4/ref=sr_1_20?__mk_ja_JP=カタカナ&amp;dchild=1&amp;keywords=プロペラ+モーター&amp;qid=1593017242&amp;s=toys&amp;sr=1-20'><span>https://www.amazon.co.jp/uxcell-DC%E3%82%B3%E3%82%A2%E3%83%AC%E3%82%B9%E3%83%A2%E3%83%BC%E3%82%BF%E3%83%BC-2%E3%83%96%E3%83%AC%E3%83%BC%E3%83%89%E3%83%97%E3%83%AD%E3%83%9A%E3%83%A9-RC%E3%82%AF%E3%83%AF%E3%83%83%E3%83%89%E3%83%AD%E3%83%BC%E3%82%BF%E3%83%BC-DC-3-7V-40000RPM-2%E5%80%8B%E5%85%A5%E3%82%8A/dp/B00R1LYVM4/ref=sr_1_20?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&amp;dchild=1&amp;keywords=%E3%83%97%E3%83%AD%E3%83%9A%E3%83%A9+%E3%83%A2%E3%83%BC%E3%82%BF%E3%83%BC&amp;qid=1593017242&amp;s=toys&amp;sr=1-20</span></a></p><h4><a name="駆動回路" class="md-header-anchor"></a><span>駆動回路</span></h4><p>&nbsp;</p><p>&nbsp;</p><h4><a name="センサーなど" class="md-header-anchor"></a><span>センサーなど</span></h4><p><span>秋月電子通商で揃えた。</span></p><p><a href='https://aki.prioris.jp/list/dbe0d1ae-bed9-472e-a191-c0c7904250fb/' target='_blank' class='url'>https://aki.prioris.jp/list/dbe0d1ae-bed9-472e-a191-c0c7904250fb/</a></p><p><span>それにしても、このakicartというサイトがめっちゃ便利。ここで部品のリストを作っておけばいつでも秋月の買い物かごに一気に入れられる。</span></p><p><a href='http://eleclog.quitsq.com/2016/06/akicart.html'><span>使い方</span></a></p><p><span>中身については下に挙げる通り。</span></p><h4><a name="gps" class="md-header-anchor"></a><span>GPS</span></h4><p><span>GPS受信機キット</span></p><h4><a name="9軸センサー" class="md-header-anchor"></a><span>9軸センサー</span></h4><p><span>BMX055</span></p><p><span>加速度3 + ジャイロ3 + 地磁気3 で9軸。</span></p><h4><a name="温湿度・気圧センサ" class="md-header-anchor"></a><span>温湿度・気圧センサ</span></h4><p><span>BME280</span></p><p><span>気圧で機体の高度が予想できる。</span></p><h4><a name="wifiモジュール" class="md-header-anchor"></a><span>Wifiモジュール</span></h4><p><span>ドローンで使えるかはわからん。</span></p><h4><a name="sdカードスロット" class="md-header-anchor"></a><span>SDカードスロット</span></h4><p><span>飛行のログを記録するのに使える。</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p><span>将来的なこと</span></p><h2><a name="空撮" class="md-header-anchor"></a><span>空撮</span></h2><p><span>高画質を狙うならGoPro？</span></p><hr /><p><span>twitterより </span><a href='https://twitter.com/metatetsu'><span>tetsu@metatetsu</span></a></p><p><span>ドローン愛好家には常識らしい「剥きプロ」というのを知った。 (GoProを分解するとメチャクチャ軽くて高画質な神カメラになる) 装甲とバッテリーを外せばこんなに小さいのか…</span></p><p><img src="images/1-1.jpg" referrerpolicy="no-referrer" alt="1-1"></p><hr /><p>&nbsp;</p></div>
+</body>
+</html>
